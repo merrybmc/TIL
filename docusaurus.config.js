@@ -10,9 +10,9 @@ const config = {
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
   url: 'https://merrybmc.github.io',
-  baseUrl: '/TIL/',
+  baseUrl: '/',
   organizationName: 'merrybmc',
-  projectName: 'TIL',
+  projectName: 'merrybmc.github.io',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
