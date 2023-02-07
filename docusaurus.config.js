@@ -6,32 +6,19 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
+  title: 'Today I Learned',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
-
-  // Set the production url of your site here
   url: 'https://merrybmc.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/TIL/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'merrybmc', // Usually your GitHub org/user name.
-  projectName: 'TIL', // Usually your repo name.
-
+  organizationName: 'merrybmc',
+  projectName: 'TIL',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
   presets: [
     [
       'classic',
@@ -39,16 +26,12 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -59,10 +42,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: 'Today I Learned',
         logo: {
           alt: 'My Site Logo',
           src: 'img/logo.svg',
@@ -70,13 +52,19 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'frontend/intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'frontend',
           },
-          { to: '/Frontend', label: 'frontend', position: 'left' },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            type: 'doc',
+            docId: 'frontend/intro',
+            position: 'left',
+            label: 'CS',
+          },
+
+          {
+            href: 'https://github.com/merrybmc',
             label: 'GitHub',
             position: 'right',
           },
@@ -88,12 +76,22 @@ const config = {
           {
             title: 'Docs',
             items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
+              // {
+              //   label: 'Tutorial',
+              //   to: '/docs/intro',
+              // },
             ],
           },
+          {
+            title: 'Docs2',
+            items: [
+              // {
+              //   label: 'Tutorial2',
+              //   to: '/docs2/intro',
+              // },
+            ],
+          },
+
           {
             title: 'Community',
             items: [
@@ -114,10 +112,10 @@ const config = {
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
+              // {
+              //   label: 'Blog',
+              //   to: '/blog',
+              // },
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
