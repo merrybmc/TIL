@@ -4,7 +4,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styled from 'styled-components';
-// import { Header, Container, HeroTitle, HeroTitleBottom, ButtonBox } from './HomepageHeader.styled';
+import { Header, Container, HeroTitle, HeroTitleBottom, ButtonBox } from './HomepageHeader.styled';
 
 export default function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -46,24 +46,24 @@ function Home() {
   );
 }
 
-const Header = styled.header`
-  max-width: 100%;
-  text-align: center;
-`;
+// const Header = styled.header`
+//   max-width: 100%;
+//   text-align: center;
+// `;
 
-const Container = styled.div`
-  padding: 1rem;
-  width: 100%;
-`;
+// const Container = styled.div`
+//   padding: 1rem;
+//   width: 100%;
+// `;
 
-const HeroTitle = styled.h1`
-  font-weight: 700;
-  font-size: 58px;
-`;
+// const HeroTitle = styled.h1`
+//   font-weight: 700;
+//   font-size: 58px;
+// `;
 
-const HeroTitleBottom = styled.h1`
-  font-weight: 400;
-  font-size: 18px;
-`;
+// const HeroTitleBottom = styled.h1`
+//   font-weight: 400;
+//   font-size: 18px;
+// `;
 
-const ButtonBox = styled.div``;
+// const ButtonBox = styled.div``;
