@@ -10,4 +10,4 @@ const sidebars = {
   ],
 };
 
-module.exports;
+module.exports = sidebars;

@@ -204,17 +204,11 @@ span .token {
 
 .hero__title {
   color: black;
-
-  font-size: 4.7rem;
+  font-size: 4.3rem;
 }
 
 .hero__title__2 {
   margin: -1rem 0px 1.5rem 0.5rem;
   font-weight: 400;
-  font-size: 4rem;
-  white-space: nowrap;
-}
-
-.hero__subtitle {
-  margin-bottom: 5rem;
+  font-size: 1.3rem;
 }

@@ -11,12 +11,13 @@ function HomepageHeader() {
   return (
     <header className={styles.heroBanner}>
       <div className='container'>
-        <h1 className='hero__title'>Today</h1>
-        <h1 className='hero__title__2'>I Learned</h1>
-        <p className='hero__subtitle'>{siteConfig.tagline}</p>
+        <h1 className='hero__title'>Today I Learned</h1>
+        <p className='hero__title__2'>
+          🚕 {'\u00A0'}안전지대 탈출하기{'\u00A0'} 🚗
+        </p>
         <div className={styles.buttons}>
           <Link className='button button--primary button--lg' to='/docs/frontend/intro'>
-            Get Started
+            Go to Docs
           </Link>
         </div>
       </div>
@@ -27,11 +28,14 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title={`Hello from ${siteConfig.title}`} description='Description will go into a meta tag in <head />'>
+    <Layout>
       <HomepageHeader />
-      <main>
-        <iframe src='https://devpla-airplain.netlify.app/' frameBorder='0' width='100%' height='700'></iframe>
-        {/* <HomepageFeatures /> */}
+
+      <main className={styles.imgs}>
+        <img
+          src='
+        https://media.tenor.com/Qu46-3ANACUAAAAC/judy-hopps-driving.gif'
+        />
       </main>
     </Layout>
   );
