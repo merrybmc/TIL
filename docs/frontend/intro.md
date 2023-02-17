@@ -2,7 +2,7 @@
 description: Create a doc page with rich content.
 ---
 
-# 안녕하세요
+# intro
 
 merrybmc의 TIL 기록 블로그입니다.
 
