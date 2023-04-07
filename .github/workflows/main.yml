@@ -19,16 +19,16 @@ jobs:
         node-version: 14
 
     - name: Install dependencies
-      run: cd website && npm ci
+      run: npm ci
 
     - name: Build
-      run: cd website && npm run build
+      run: npm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./website/build/TIL # 프로젝트 이름을 실제 프로젝트 이름으로 변경하세요.
+        publish_dir: ./build/TIL # 프로젝트 이름을 실제 프로젝트 이름으로 변경하세요.
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
         keep_files: true
