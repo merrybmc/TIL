@@ -27,7 +27,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.GH_PAGES_TOKEN }}
         publish_dir: ./build/TIL # 프로젝트 이름을 실제 프로젝트 이름으로 변경하세요.
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
