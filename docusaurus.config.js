@@ -22,12 +22,13 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        path: 'docs', 
+        routeBasePath: 'docs', 
+        sidebarPath: require.resolve('./sidebars.js'),
+        editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
         blog: {
           showReadingTime: true,
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
@@ -62,7 +63,18 @@ const config = {
             position: 'left',
             label: 'CS',
           },
-
+//  {
+//       type: 'doc',
+//       docId: 'frontend/introduction', // 'frontend/intro'를 'frontend/introduction'으로 변경하세요.
+//       position: 'left',
+//       label: 'Frontend',
+//     },
+//     {
+//       type: 'doc',
+//       docId: 'cs/introduction', // 'frontend/intro'를 'cs/introduction'으로 변경하세요.
+//       position: 'left',
+//       label: 'CS',
+//     },
           {
             href: 'https://github.com/merrybmc',
             label: 'GitHub',
