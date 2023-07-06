@@ -101,15 +101,95 @@ h1 {
 
 ## 복합 선택자
 
-### 자손 선택자
+### 자손 선택자 ( )
 
-- 부모 태그의 자식 태그 전부에 CSS를 적용한다.
-
-- 앞을 부모, 뒤를 자식으로 공백을 통해 구분한다.
+- 상위 태그의 하위 태그 전부에 CSS를 적용한다.
+- 앞을 상위, 뒤를 하위 태그로 공백을 통해 구분한다.
 
 ```css
 /* div 하위의 모든 p 태그에 CSS를 적용한다. */
 div p {
   font-size: 30px;
 }
+```
+
+### 자식 선택자 ( > )
+
+- 상위 태그의 한 단계 하위 태그 전부에만 적용한다.
+
+```html
+<style>
+  div > p {
+    color: blue;
+  }
+</style>
+
+<body>
+  <div>
+    <p>Hello World</p>
+    // CSS 적용
+    <p>Hello World</p>
+    // CSS 적용
+    <div>
+      <p>Hello World</p>
+      // CSS 미적용
+    </div>
+  </div>
+</body>
+```
+
+### 일반 형제 선택자 ( ~ )
+
+- 태그가 닫힌 이후의 태그 전부에 적용한다.
+
+```html
+<style>
+  div ~ p {
+    color: blue;
+  }
+</style>
+
+<body>
+  <div>
+    <p>Hello World</p>
+    // CSS 미적용
+    <p>Hello World</p>
+    // CSS 미적용
+    <div>
+      <p>Hello World</p>
+      // CSS 미적용
+    </div>
+    <p>Hello World</p>
+    // CSS 적용
+    <p>Hello World</p>
+    // CSS 적용
+  </div>
+</body>
+```
+
+### 인접 형제 선택자 ( + )
+
+- 태그가 닫힌 이후 가장 인접한 태그에 적용한다.
+
+```html
+<style>
+  div + p {
+    color: blue;
+  }
+</style>
+
+<body>
+  <div>
+    <p>Hello World</p>
+    // CSS 미적용
+    <div>
+      <p>Hello World</p>
+      // CSS 미적용
+    </div>
+    <p>Hello World</p>
+    // CSS 적용
+    <p>Hello World</p>
+    // CSS 미적용
+  </div>
+</body>
 ```
