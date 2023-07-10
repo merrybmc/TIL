@@ -1,4 +1,4 @@
-# display 속성
+# display
 
 ## block
 
