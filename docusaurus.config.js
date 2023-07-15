@@ -22,13 +22,13 @@ const config = {
   presets: [
     [
       'classic',
-      ({
+      {
         docs: {
-        path: 'docs', 
-        routeBasePath: 'docs', 
-        sidebarPath: require.resolve('./sidebars.js'),
-        editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-      },
+          path: 'docs',
+          routeBasePath: 'docs',
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        },
         blog: {
           showReadingTime: true,
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
@@ -36,7 +36,7 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
   ],
 
@@ -45,10 +45,10 @@ const config = {
     ({
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Today I Learned',
+        title: `merrybmc's TIL`,
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'https://jjalbang.today/jjv1In.gif',
         },
         items: [
           {
@@ -57,24 +57,24 @@ const config = {
             position: 'left',
             label: 'frontend',
           },
-          {
-            type: 'doc',
-            docId: 'frontend/intro',
-            position: 'left',
-            label: 'CS',
-          },
-//  {
-//       type: 'doc',
-//       docId: 'frontend/introduction', // 'frontend/intro'를 'frontend/introduction'으로 변경하세요.
-//       position: 'left',
-//       label: 'Frontend',
-//     },
-//     {
-//       type: 'doc',
-//       docId: 'cs/introduction', // 'frontend/intro'를 'cs/introduction'으로 변경하세요.
-//       position: 'left',
-//       label: 'CS',
-//     },
+          // {
+          //   type: 'doc',
+          //   docId: 'frontend/intro',
+          //   position: 'left',
+          //   label: 'CS',
+          // },
+          //  {
+          //       type: 'doc',
+          //       docId: 'frontend/introduction', // 'frontend/intro'를 'frontend/introduction'으로 변경하세요.
+          //       position: 'left',
+          //       label: 'Frontend',
+          //     },
+          //     {
+          //       type: 'doc',
+          //       docId: 'cs/introduction', // 'frontend/intro'를 'cs/introduction'으로 변경하세요.
+          //       position: 'left',
+          //       label: 'CS',
+          //     },
           {
             href: 'https://github.com/merrybmc',
             label: 'GitHub',
