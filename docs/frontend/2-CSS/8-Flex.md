@@ -83,7 +83,7 @@
 }
 ```
 
-![image-20230711081724244](C:\Users\User\AppData\Roaming\Typora\typora-user-images\image-20230711081724244.png)
+![image](https://github.com/merrybmc/TIL/assets/65064563/c9297c71-b53c-4d91-9865-a4eb5190aea9)
 
 ### column
 
@@ -341,7 +341,7 @@ flex-container {
 
 ### stretch
 
-- 아이템들이 수직축 방향으로 컨테이너의 높이만큼 늘어난다.
+- 아이템들이 시작점에서 시작하여 줄바꿈이 일어난다.
 - 속성의 기본 값이다.
 
 ```css
@@ -353,9 +353,58 @@ flex-container {
 }
 ```
 
-![image](https://github.com/merrybmc/TIL/assets/65064563/4181772a-e5e2-418e-8fd1-1a0d58b7da98)
+![image](https://github.com/merrybmc/TIL/assets/65064563/d1dae30f-3a50-4710-936a-c1804fff62ba)
+
+**align-items:stretch일 경우**
+
+- align-content: stretch; 와 동일한 정렬이 적용된다.
+
+![image](https://github.com/merrybmc/TIL/assets/65064563/d1dae30f-3a50-4710-936a-c1804fff62ba)
 
 ### flex-start
 
 - 아이템들을 컨테이너 시작 지점으로 정렬한다.
-- flex-direction이 row일 경우 위쪽, column일 경우 왼쪽에 배치된다.
+
+![image](https://github.com/merrybmc/TIL/assets/65064563/96577923-ffbb-49cb-82d2-ee2e9dc45379)
+
+**align-items:start일 경우**
+
+- 줄바꿈이 일어난 아이템이 시작 지점으로 정렬되지 않는다.
+
+![image](https://github.com/merrybmc/TIL/assets/65064563/dcd2ea0b-841c-4440-bf27-8809c36e1e5e)
+
+### flex-end
+
+- 아이템들을 컨테이너 끝 지점으로 정렬한다.
+
+![image](https://github.com/merrybmc/TIL/assets/65064563/663dbb3f-daa4-401c-ae3e-2c57be111ec5)
+
+**align-items:end일 경우**
+
+- 아이템들이 끝 지점으로 정렬되지 않고 정렬된 아이템이 끝 지점에 위치해있다.
+
+![image](https://github.com/merrybmc/TIL/assets/65064563/26839cdc-388a-492d-9404-9aade24208cf)
+
+### center
+
+- 아이템들을 가운데로 정렬한다.
+
+![image](https://github.com/merrybmc/TIL/assets/65064563/39aee2a6-a6d9-4aca-9fd9-76f8d9f379e1)
+
+**align-items:center일 경우**
+
+- 아이템들이 중앙으로 정렬되지 않고 마치 space-around가 적용된 것 처럼 정렬된다.
+
+![image](https://github.com/merrybmc/TIL/assets/65064563/ce022255-7df4-47db-8643-654d045483af)
+
+### space-between
+
+- 아이템들의 공간을 균일하게 배치한다.
+
+![image](https://github.com/merrybmc/TIL/assets/65064563/57bef774-4664-4359-9159-b7a9ef713b24)
+
+### space-around
+
+- 각 아이템들의 둘레에 균일한 여백을 주어 배치한다.
+
+![image](https://github.com/merrybmc/TIL/assets/65064563/ce022255-7df4-47db-8643-654d045483af)
