@@ -83,7 +83,7 @@
 }
 ```
 
-![image](https://github.com/merrybmc/TIL/assets/65064563/c9297c71-b53c-4d91-9865-a4eb5190aea9)
+![image](https://github.com/merrybmc/TIL/assets/65064563/05e985be-6afc-46ed-acda-76d374818531)
 
 ### column
 
