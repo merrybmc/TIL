@@ -18,4 +18,35 @@ Concepts of Vue.js
 구글의 Angular 개발자 출신 .
 학사 미술, 미술사 전공/석사 디자인 & 테크놀로지 전공
 구글 Angular보다 더 가볍고, 간편하게 사용할 수 있는 프레임워크를 만들기 위해 개발
-::: -->
+:::
+
+:::note
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::tip white
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::info
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::caution
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::danger red
+
+Some **content** with _Markdown_ `syntax`. Check [this `api`](#).
+
+:::
+ -->
