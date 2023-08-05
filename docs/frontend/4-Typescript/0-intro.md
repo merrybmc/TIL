@@ -14,3 +14,80 @@
 4. 언어 서비스: 타입 검사기를 사용해 vsc와 같은 편집기에서 개발자에게 유용한 유틸리티 제공법을 알려주는 프로그램
 
 :::
+
+## 타입스크립트 설치 및 사용
+
+```bash
+npm install -g typescript
+```
+
+- 웹브라우저는 ts 파일을 인식할 수 없기 때문에 js 파일로 변환 작업을 해야 한다.
+
+ts - js 파일 변환 방법
+
+```bash
+tsc - w
+```
+
+- 자동으로 ts 파일을 js 파일로 변환해준다.
+
+**HTML 파일에서는 js파일을 사용할 것**
+
+```html
+<script src="변환된파일.js"></script>
+```
+
+## React에서 typeScript 사용
+
+### 새로운 프로젝트를 만들 경우
+
+```bash
+npx create-react-app my-app --template typescript
+yarn create react-app my-app --template typescript
+```
+
+### 기존 프로젝트에 설치할 경우
+
+```bash
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+```
+
+## 세부 설정
+
+tsconfig.json
+
+```typescript
+{
+    "complierOptions": {
+        "target": "es6", // 필수
+        "module": "commonjs"// 필수
+    }
+}
+```
+
+- target = 자바스크립트의 버전
+- module = 자바스크립트 파일간의 import 문법
+
+  - commonjs = require 문법 **(권장)**
+  - es2015, esnext = import 문법
+
+- 그 외 옵션
+  - "allowJs" : true = js 파일들 ts에서 import해서 쓸 수 있는지
+  - "checkJs" : true = 일반 js 파일에서도 에러체크 여부
+  - "jsx": "preserve" = tsx 파일을 jsx로 어떻게 컴파일할 것인지 'preserve', 'react-native', 'react'
+  - "declaration": true = 컴파일시 .d.ts 파일도 자동으로 함께생성 (현재쓰는 모든 타입이 정의된 파일)
+  - "outFile": "./" = 모든 ts파일을 js파일 하나로 컴파일해줌 (module이 none, amd, system일 때만 가능)
+  - "outDir": "./" = js파일 아웃풋 경로바꾸기
+  - "rootDir": "./" = 루트경로 바꾸기 (js 파일 아웃풋 경로에 영향줌)
+  - "removeComments": true = 컴파일시 주석제거
+  - "strict": true = strict 관련, noimplicit 어쩌구 관련 모드 전부 켜기
+  - "noImplicitAny": true = any타입 금지 여부
+  - "strictNullChecks": true = null, undefined 타입에 이상한 짓 할시 에러내기
+  - "strictFunctionTypes": true = 함수파라미터 타입체크 강하게
+  - "strictPropertyInitialization": true = class constructor 작성시 타입체크 강하게
+  - "noImplicitThis": true = this 키워드가 any 타입일 경우 에러내기
+  - "alwaysStrict": true = 자바스크립트 "use strict" 모드 켜기
+  - "noUnusedLocals": true = 쓰지않는 지역변수 있으면 에러내기
+  - "noUnusedParameters": true = 쓰지않는 파라미터 있으면 에러내기
+  - "noImplicitReturns": true = 함수에서 return 빼먹으면 에러내기
+  - "noFallthroughCasesInSwitch": true = switch문 이상하면 에러내기
