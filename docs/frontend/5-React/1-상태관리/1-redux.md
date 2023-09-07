@@ -13,8 +13,6 @@ yarn : yarn add redux react-redux
 - 액션을 선언할 때 액션이름을 상수로 정의하고 "모듈이름/액션이름" 으로 표현하는 것이 좋다.
   - 액션 이름이 충돌되는 것을 방지할 수 있다.
 
-예시
-
 ```js
 {
   const INCREASE = 'textsize/INCREASE';
