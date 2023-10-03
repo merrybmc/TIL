@@ -23,3 +23,6 @@ npm install eslint-config-prettier --save-dev
 - 이 rule들이 prettier와 다른 설정을 가지고 있다면 설정에 충돌이 발생한다.
 - 따라서 eslint에는 formatting 관련 rule들을 모두 해제해야할 필요가 있다.
 - 수동으로 해제할 수도 있지만 자동으로 적용해주는 eslint-config-plugin을 쓸 수 있다.
+
+참고자료 <br/>
+https://eslint.org/
