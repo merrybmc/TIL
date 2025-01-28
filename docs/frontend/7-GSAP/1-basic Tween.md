@@ -30,6 +30,7 @@ gsap.to('h1', { properties });
 | scaleY: 2      | transform: scaleY(2)         | Y축으로 크기 2배 증가               |
 | xPercent: 50   | transform: translateX(50%)   | 현재 위치에서 X축으로 50% 만큼 이동 |
 | yPercent: 50   | transform: translateY(50%)   | 현재 위치에서 Y축으로 50% 만큼 이동 |
+| duration: 3    | transition: all 3s           | 3초 동안 실행                       |
 
 :::danger 브라우저 성능을 고려한다면
 
