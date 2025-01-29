@@ -27,13 +27,26 @@ greenSock 회사에서 만든 애니메이션 플랫폼으로, JavaSkcript에서
 - npm install @gsap/react gsap
 
 - ```react
-  import { useGSAP } from '@gsap/react';
-  import gsap from 'gsap';
+    import { useGSAP } from '@gsap/react';
+    import gsap from 'gsap';
+    import { useRef } from 'react'
+
+    export default function App() {
+        const container = useRef();
+
+        useGSAP(()=>{ gsap.to('.box') }, { scope: container })
+
+        return (
+            <div ref={container}>
+                <div className='box'></div>
+            </div>)
   ```
 
-### 주의사항
+- useGSAP
+  - 콜백 객체 : GSAP method
+  - 의존성 객체 : scope: Ref container (해당 ref가 적용된 상위 태그 안에서만 method가 작동)
 
-#### GSAP 객체는 보호되지 않는다.
+:::danger GSAP 객체는 보호되지 않는다.
 
 ```javascript
 gsap = 'a';
