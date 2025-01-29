@@ -47,6 +47,7 @@ GSAP은 사용자가 설정한 모든 숫자 속성에 대해 애니메이션을
 :::danger 브라우저 성능을 고려한다면
 
 브라우저 성능을 최대치로 끌어올리기 위해선 **CSS Transform**과 **Opacity**만을 사용하여 애니메이션을 구현하는걸 권장한다. CSS Transform과 Opacity는 애니메이션을 위해 최적화되어 있는 코드이고 GPU를 사용하는 장점이 있다. left, margin, padding, width/height 조절 등을 사용하게 되면 브라우저가 페이지 레이아웃을 다시 리렌더링(re-render)하기 때문에 브라우저 성능이 저하될 수 있다.
+:::
 
 - special properties
 
@@ -96,3 +97,37 @@ gsap.fromTo('orange', { x: 400, y: 500 }, { x: 200, y: 200 });
 ```
 
 코드에서 사용된 2개의 객체는 from vars와 to vars로 작동된다.
+
+## ease
+
+애니메이션에 가속도를 주는 property이며 기본 값은 ease: 'power1.out' 이며 모든 property는 out이 기본 값이다.
+
+GSAP에서는 애니메이션을 위해 사용하기도 하지만 레이아웃, 오브젝트간의 간격을 주기 위해 사용된다.
+
+- properties (https://gsap.com/docs/v3/Eases/)
+
+| GSAP                          | description                                                      |
+| ----------------------------- | ---------------------------------------------------------------- |
+| iease: &#39;method.inOut&#39; | in -> Out -> in 순서대로 동작                                    |
+| ease: 'none' or linear'       | 등속도 운동                                                      |
+| **ease: 'power1'**            | 부드럽게 시작해서 부드럽게 끝나는 기본적인 가속도 운동           |
+| ease: 'power1.in'             | 훨씬 빠르게 가속                                                 |
+| **ease: 'power2'**            | 빠르게 가속한 후 부드럽게 감속하는 효과                          |
+| ease: 'power2.in'             | 훨씬 빠르게 가속                                                 |
+| **ease: 'power3'**            | power2보다 빠르게 가속한 후 부드럽게 감속하는 효과               |
+| ease: 'power3.in'             | 훨씬 빠르게 가속                                                 |
+| **ease: 'power4'**            | power3보다 빠르게 가속한 후 부드럽게 감속하는 효과               |
+| ease: 'power4.in'             | 훨씬 빠르게 가속                                                 |
+| **ease: 'back'**              | 지정한 위치보다 더 멀리 이동 후 다시 지정한 위치로 복귀하는 효과 |
+| ease: 'back.in'               | 원래 위치에서 뒤로 살짝 갔다가 빠르게 가속                       |
+| **ease: 'bounce'**            | 지정한 위치로 여러 번 튕긴 후 도달하는 효과                      |
+| ease: 'bounce.in'             | 시작 지점에서 여러 번 튕긴 후 지정한 위치로 이동                 |
+| **ease: 'circ'**              | 원형 곡선을 따라 이동하는 효과                                   |
+| ease: 'circ.in'               | 원형 곡선을 따라 가속                                            |
+| **ease: 'elastic'**           | 고무줄처럼 탄성을 주며 튕기는 효과                               |
+| ease: 'elastic.in'            | 고무줄처럼 탄성을 가하는 준비 운동 후 지정한 위치로 가속         |
+| **ease: 'expo'**              | 아주 빠르게 움직인 후 느리게 멈춤                                |
+| ease: 'expo.in'               | 아주 느리게 시작한 후 빠르게 멈춤                                |
+| **ease: 'sine'**              | sin 기반의 자연스러운 감속                                       |
+| ease: 'sine.in'               | 자연스러운 가속                                                  |
+| ease: 'steps(n)'              | 애니메이션을 n단계로 나누어 진행 (스프라이트 애니메이션)         |
