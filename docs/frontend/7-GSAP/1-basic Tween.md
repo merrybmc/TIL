@@ -49,6 +49,8 @@ GSAP은 사용자가 설정한 모든 숫자 속성에 대해 애니메이션을
 브라우저 성능을 최대치로 끌어올리기 위해선 **CSS Transform**과 **Opacity**만을 사용하여 애니메이션을 구현하는걸 권장한다. CSS Transform과 Opacity는 애니메이션을 위해 최적화되어 있는 코드이고 GPU를 사용하는 장점이 있다. left, margin, padding, width/height 조절 등을 사용하게 되면 브라우저가 페이지 레이아웃을 다시 리렌더링(re-render)하기 때문에 브라우저 성능이 저하될 수 있다.
 :::
 
+<br/>
+
 - special properties
 
 | GSAP            | CSS                                                     | description                                                                       |
@@ -100,8 +102,7 @@ gsap.fromTo('orange', { x: 400, y: 500 }, { x: 200, y: 200 });
 
 ## ease
 
-애니메이션에 가속도를 주는 property이며 기본 값은 ease: 'power1.out' 이며 모든 property는 out이 기본 값이다.
-
+애니메이션에 가속도를 주는 property이며 기본 값은 ease: 'power1.out' 이며 모든 property는 out이 기본 값이다.<br/>
 GSAP에서는 애니메이션을 위해 사용하기도 하지만 레이아웃, 오브젝트간의 간격을 주기 위해 사용된다.
 
 - properties (https://gsap.com/docs/v3/Eases/)
@@ -131,3 +132,59 @@ GSAP에서는 애니메이션을 위해 사용하기도 하지만 레이아웃, 
 | **ease: 'sine'**              | sin 기반의 자연스러운 감속                                       |
 | ease: 'sine.in'               | 자연스러운 가속                                                  |
 | ease: 'steps(n)'              | 애니메이션을 n단계로 나누어 진행 (스프라이트 애니메이션)         |
+
+## stagger
+
+단일 Tween에서 여러 대상의 시작 시간을 오프셋 설정하여 다중 요소를 제어 가능하다.
+
+```html
+<body>
+  <div class="stage">
+    <div class="orange"></div>
+    <div class="pink"></div>
+    <div class="green"></div>
+    <div class="red"></div>
+    <div class="blue"></div>
+  </div>
+</body>
+
+<script>
+  gsap.to('.orange', { x: 100 });
+  gsap.to('.pink', { x: 100, delay: 0.3 });
+  gsap.to('.green', { x: 100, delay: 0.6 });
+  gsap.to('.red', { x: 100, delay: 0.9 });
+  gsap.to('.blue', { x: 100, delay: 1.2 });
+</script>
+```
+
+- 이 경우 객체가 더 많을 경우 delay을 일일이 전부 다 수정해주어야 한다.
+- 이러한 기능은 CSS 속성에서 지원하지 않는다.
+  <br/><br/>
+- 기본 구문
+
+```html
+<body>
+  <div class="stage">
+    <div class="orange box"></div>
+    <div class="pink box"></div>
+    <div class="green box"></div>
+    <div class="red box"></div>
+    <div class="blue box"></div>
+  </div>
+</body>
+
+<script>
+  gsap.to('.box', { x: 100, stagger: 0.3 });
+</script>
+```
+
+- 각 box class를 가진 오브젝트들이 순차적으로 delay를 0.3초씩 가지며 실행된다.
+
+- properties
+
+| GSAP                     | description                                                                                                                                                             |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| stagger: 0.3             | 0.3초의 delay를 가지며 다중 요소가 순차적으로 실행                                                                                                                      |
+| stagger: { each: 0.3 }   | 기본 값, 각 요소의 시작 사이에 0.3초의 대기 시간 적용 (stagger: 0.3과 동일)                                                                                             |
+| stagger: { amount: 1.0 } | 다중 요소가 1초를 각각 나누어 1초만에 모든 애니메이션이 순차적으로 실행                                                                                                 |
+| stagger: {from: 'value'} | number: 해당 index의 오브젝트부터 실행,<br />'center': 요소의 가운데 index부터 실행<br />end': 요소의 마지막 index부터 실행<br />'edges': 요소의 양쪽 끝 index부터 실행 |
