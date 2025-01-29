@@ -1,22 +1,6 @@
 # Basic Tween
 
-## gsap.to
-
-원래 위치에서 지정한 값(위치)으로 이동하는 애니메이션이다.
-
-- 기본 구문
-
-```javascript
-gsap.to('class, tag', { properties });
-
-// ex) class
-gsap.to('.box', { properties });
-
-// ex) tag
-gsap.to('h1', { properties });
-```
-
-- properties
+- basic properties
 
 | GSAP                   | CSS                          | description                                                   |
 | ---------------------- | ---------------------------- | ------------------------------------------------------------- |
@@ -32,7 +16,7 @@ gsap.to('h1', { properties });
 | scaleY: 2              | transform: scaleY(2)         | Y축으로 크기 2배 증가                                         |
 | xPercent: 50           | transform: translateX(50%)   | 현재 위치에서 X축으로 50% 만큼 이동                           |
 | yPercent: 50           | transform: translateY(50%)   | 현재 위치에서 Y축으로 50% 만큼 이동                           |
-| duration: 3            | transition: all 3s           | 3초 동안 실행                                                 |
+| duration: 3            | transition: all 3s           | 3초 동안 실행, default: 0.5초                                 |
 | opacity: 0             | opacity: 0                   | 투명도 100%                                                   |
 | width: 100             | width: 100px                 | 가로 길이를 100px만큼 설정                                    |
 | height: 100            | height: 100px                | 세로 길이를 100px만큼 설정                                    |
@@ -63,9 +47,35 @@ GSAP은 사용자가 설정한 모든 숫자 속성에 대해 애니메이션을
 :::danger 브라우저 성능을 고려한다면
 
 브라우저 성능을 최대치로 끌어올리기 위해선 **CSS Transform**과 **Opacity**만을 사용하여 애니메이션을 구현하는걸 권장한다. CSS Transform과 Opacity는 애니메이션을 위해 최적화되어 있는 코드이고 GPU를 사용하는 장점이 있다. left, margin, padding, width/height 조절 등을 사용하게 되면 브라우저가 페이지 레이아웃을 다시 리렌더링(re-render)하기 때문에 브라우저 성능이 저하될 수 있다.
-:::
 
-## gsap.from()
+- special properties
+
+| GSAP            | CSS                                                     | description                                                                       |
+| --------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| repeat: 3       | 직접적인 CSS 속성 사용 불가animation-iteration-count: 4 | 애니메이션을 3번 반복                                                             |
+| repeat: -1      | animation-iteration-count: infinite                     | 애니메이션 무한 반복                                                              |
+| delay: 3        | animation-delay: 2s                                     | 최초 애니메이션이 실행 대기 시간 3초                                              |
+| crepeatDelay: 2 | CSS 속성 사용 불가                                      | 애니메이션 반복 대기 시간 2초                                                     |
+| rotationX: 360  | transform: rotateX(360deg)                              | X축으로 360도 회전                                                                |
+| yoyo: true      | animation-direction: alternate                          | 현재 위치에서 지정한 위치까지 이동 후 다시 현재 위치로 되돌아오는 애니메이션 반복 |
+
+## gsap.to
+
+원래 위치에서 지정한 값(위치)으로 이동하는 애니메이션이다.
+
+- 기본 구문
+
+```javascript
+gsap.to('class, tag', { properties });
+
+// ex) class
+gsap.to('.box', { properties });
+
+// ex) tag
+gsap.to('h1', { properties });
+```
+
+## from()
 
 지정한 값(위치)에서 부터 원래의 위치로 되돌아오는 애니메이션이다.
 
@@ -75,7 +85,7 @@ GSAP은 사용자가 설정한 모든 숫자 속성에 대해 애니메이션을
 gsap.from('.orange', { x: 400, y: 500 });
 ```
 
-## gsap.fromTo()
+## fromTo()
 
 지정한 값(2번째 파라미터)에서 지정한 값으로(3번째 파라미터)로 이동하는 애니메이션이다.
 
