@@ -188,3 +188,87 @@ GSAP에서는 애니메이션을 위해 사용하기도 하지만 레이아웃, 
 | stagger: { each: 0.3 }   | 기본 값, 각 요소의 시작 사이에 0.3초의 대기 시간 적용 (stagger: 0.3과 동일)                                                                                             |
 | stagger: { amount: 1.0 } | 다중 요소가 1초를 각각 나누어 1초만에 모든 애니메이션이 순차적으로 실행                                                                                                 |
 | stagger: {from: 'value'} | number: 해당 index의 오브젝트부터 실행,<br />'center': 요소의 가운데 index부터 실행<br />end': 요소의 마지막 index부터 실행<br />'edges': 요소의 양쪽 끝 index부터 실행 |
+
+## twin Control
+
+tween 애니메이션을 제어할 수 있는 method이다.
+
+- 기본 구문 (HTML)
+
+```javascript
+// 기본 구문
+let tween = gsap.to('target', { x: 500 });
+
+// property로 기본 재생을 중지 상태로 만들 수도 있다.
+let tween = gsap.to('target', { x: 500, paused: true });
+
+// DOM
+document.querySelector('target').addEventListener('click', () => {
+  tween.methods();
+});
+```
+
+- 기본 구문 (React)
+
+```react
+xport default function App() {
+  const container = useRef();
+
+  // twin을 Control할 오브젝트 Ref
+  const boxRef = useRef();
+
+  // twin method 제어 Ref
+  const tweenRef = useRef();
+
+  useGSAP(
+    () => {
+      tweenRef.current = gsap.to(boxRef.current, {
+        x: 500,
+        //  paused: true // 기본 재생 중지 방법 1
+      });
+      tweenRef.current.pause(); // 기본 재생 중지 방법 2
+    },
+    { scope: container }
+  );
+
+  const onControlBox = (control) => {
+    control === 'play' && tweenRef.current.play();
+    control === 'pause' && tweenRef.current.pause();
+    control === 'resume' && tweenRef.current.resume();
+    control === 'reverse' && tweenRef.current.reverse();
+    control === 'restart' && tweenRef.current.restart();
+  };
+
+  return (
+    <div ref={container}>
+      <div ref={boxRef} className='orange'></div>
+
+      <button onClick={() => { onControlBox('play'); }} >
+        play
+      </button>
+      <button onClick={() => { onControlBox('pause'); }} >
+        pause
+      </button>
+      <button onClick={() => { onControlBox('resume'); }} >
+        resume
+      </button>
+      <button onClick={() => { onControlBox('reverse'); }} >
+        reverse
+      </button>
+      <button onClick={() => { onControlBox('restart'); }} >
+        restart
+      </button>
+    </div>
+  );
+}
+```
+
+- methods
+
+| GSAP           | description       |
+| -------------- | ----------------- |
+| twin.play()    | 애니메이션 재생   |
+| twin.pause()   | 애니메이션 중지   |
+| twin.resume()  | 애니메이션 재개   |
+| twin.reverse() | 애니메이션 역재생 |
+| twin.restart() | 애니메이션 재실행 |
