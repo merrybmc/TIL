@@ -1,0 +1,33 @@
+body {
+  background-color: gray;
+}
+
+.orange {
+  width: 100px;
+  height: 100px;
+  background: orange;
+}
+
+.pink {
+  width: 100px;
+  height: 100px;
+  background: pink;
+}
+
+.green {
+  width: 100px;
+  height: 100px;
+  background: green;
+}
+
+.red {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+.blue {
+  width: 100px;
+  height: 100px;
+  background: blue;
+}
