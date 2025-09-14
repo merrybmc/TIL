@@ -1,8 +1,6 @@
-# 함수
+<!-- # 함수
 
 ## 함수
-
-
 
 ### 함수 선언문
 
@@ -10,45 +8,36 @@
 
 ```ts
 function name() {
-	return;
+  return;
 }
 ```
-
-
 
 return을 명시적으로 하지 않으면 자동으로 undefined가 반환된다.
 
 ```ts
 function add() {}
 
-console.log(add()) // undefined
-
+console.log(add()); // undefined
 ```
-
-
 
 return을 함수 중간에 하게 될 경우, 함수가 종료된다.
 
 ```ts
 function print(text, num) {
-	if(num < 0){
-		return; // 함수 종료
-	}
-	console.log(text); // 코드가 실행되지 않음
+  if (num < 0) {
+    return; // 함수 종료
+  }
+  console.log(text); // 코드가 실행되지 않음
 }
 ```
-
-
 
 ### 함수 표현식
 
 ```ts
-const name = function() {
-	return;
-}
+const name = function () {
+  return;
+};
 ```
-
-
 
 함수 표현식에서 함수 이름을 설정할 경우, 지정되지 않은 함수라고 오류가 발생한다. (외부에서 접근 불가능)
 
@@ -56,12 +45,10 @@ const name = function() {
 
 ```ts
 const name = function myName() {
-	return;
-}
+  return;
+};
 myName();
-
 ```
-
 
 ## 매개변수
 
@@ -71,14 +58,12 @@ myName();
 
 ```ts
 function add(a = 1, b = 1) {
-	console.log(arguments); // [Arguments] { '0': 1, '1': 2, '2': 3 }
-	return a + b;
+  console.log(arguments); // [Arguments] { '0': 1, '1': 2, '2': 3 }
+  return a + b;
 }
 
-let result = add(2, 3) // 5
+let result = add(2, 3); // 5
 ```
-
-
 
 ## Rest 매개변수 (Rest Parameters)
 
@@ -103,31 +88,23 @@ function sum(...numbers) {
 let result = sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 ```
 
-
-
 ## 화살표 함수
-
-
 
 ### 함수 표현식
 
 ```ts
 const add = (a, b) => {
-	return a + b;
-}
+  return a + b;
+};
 ```
-
-
 
 함수 안에서 특별한 수행을 하지 않고 바로 return하는 경우일 때
 
 값만 리턴하는 경우, 중괄호 및 return 생략 가능
 
 ```ts
-let add = (a,b) => a + b;
+let add = (a, b) => a + b;
 ```
-
-
 
 ### 일반함수와의 차이점
 
@@ -148,8 +125,6 @@ function Dog() {
 }
 ```
 
-
-
 #### 화살표함수
 
 화살표함수의 this는 자신이 종속된 인스턴스의 name을 가리킨다.
@@ -167,22 +142,17 @@ function Dog() {
 }
 ```
 
-
-
 ## 즉각호출함수 (IIFE)
 
-즉각호출함수＝IIFE (Immedicately-Invoked Function Expressions)
+즉각호출함수＝ IIFE (Immedicately-Invoked Function Expressions)
 
-함수를 괄호로 묶을 경우 함수가 값으로 변경되어 바로 호출이 된다.　
+함수를 괄호로 묶을 경우 함수가 값으로 변경되어 바로 호출이 된다.
 
 ```ts
 (function run() {
-	console.log('👍');
-})()
+  console.log("👍");
+})();
 ```
-
-
-
 
 ## 일급객체 (first-class object)
 
@@ -192,14 +162,10 @@ function Dog() {
   - 할당 명령문
   - 동일 비교 대상
 
-
-
 ## 고차함수
 
 - 인자로 함수를 받거나 (콜백함수)
 - 함수를 반환하는 함수
-
-
 
 ## 콜백함수
 
@@ -227,21 +193,17 @@ console.log(calculator(1, 2, add)); // 3
 console.log(calculator(2, 3, multiply)); // 6
 ```
 
-
-
 ## 불변성
 
 - 불변성 (Immutability) == unchangable 의 동의어와 같다.
 - 함수 내부에서 외부로부터 주어진 인자의 값을 변경하는 것은 좋지 않다.
 
-
-
 원시값은 값에 의한 복사이며 값 자체가 복사되어 전달되어 문제가 없다.
 
 ```ts
 function display(num) {
-	num = 5;
-	console.log(num);
+  num = 5;
+  console.log(num);
 }
 const value = 4;
 
@@ -249,18 +211,15 @@ display(value); // 5
 console.log(value); // 4
 ```
 
-
-
 하지만 객체값일 경우 참조에 의한 복사(메모리주소) 라서 문제가 발생한다.
 
 ```ts
 function displayObj(obj) {
-	obj.name = 'Bob';
-	console.log(obj.name); // Bob
+  obj.name = "Bob";
+  console.log(obj.name); // Bob
 }
 
-const myName = { name : byeongMin };
+const myName = { name: byeongMin };
 displayObj(myName);
 console.log(myName.name); // Bob
-```
-
+``` -->
