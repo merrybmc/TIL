@@ -1,4 +1,5 @@
-console.log(x);
-console.log(y);
-var x = 1;
-var y = 1;
+let foo = 1; // 전역 변수
+{
+  console.log(foo); // ReferenceError
+  let foo = 2; // 지역 변수
+}
